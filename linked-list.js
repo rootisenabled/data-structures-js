@@ -1,3 +1,6 @@
+/*
+	Main class for creating linked list instances
+ */
 class LinkedList {
   constructor() {
     this.head = null;
@@ -5,15 +8,21 @@ class LinkedList {
     this.size = 0;
   }
 
+  /*
+  	@returns {number} Keeping a track of a list size
+   */
   size() {
     return this.size;
   }
 
-  search(value) {
+  /*
+  	
+   */
+  contains(value) {
     let node = this.head;
     while (node) {
       if (node.value == value) {
-        return node.value;
+        return true;
       }
       node = node.next;
     }
@@ -78,8 +87,14 @@ class LinkedList {
   
 }
 
-
+/*
+	Helper class for creating nodes for Linked List
+ */
 class Node {
+	/*
+		Create a node
+		@param {any} value
+	 */
   constructor(value) {
     this.value = value;
     this.next = null;
